@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer className="border-t border-border/50 bg-card/30 pt-20 pb-10">
       <div className="container">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
           <div className="col-span-2 md:col-span-1">
             <MagniPayLogo size="sm" />
             <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
@@ -47,17 +47,22 @@ const Footer = () => {
               </ul>
             </div>
           ))}
+
+          {/* Legal column */}
+          <div>
+            <h4 className="font-display font-bold text-sm uppercase tracking-wider mb-5 text-primary">Legal</h4>
+            <ul className="space-y-3">
+              <li><Link to="/privacy" className="text-sm text-muted-foreground hover:text-foreground hover:translate-x-1 transition-all duration-200 inline-block">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="text-sm text-muted-foreground hover:text-foreground hover:translate-x-1 transition-all duration-200 inline-block">Terms of Service</Link></li>
+              <li><Link to="/refund" className="text-sm text-muted-foreground hover:text-foreground hover:translate-x-1 transition-all duration-200 inline-block">Refund Policy</Link></li>
+            </ul>
+          </div>
         </div>
 
-        <div className="border-t border-border/50 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-border/50 pt-8 flex items-center justify-center">
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Magnipay Technologies Private Limited. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs text-muted-foreground">
-            <Link to="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-foreground transition-colors">Terms of Service</Link>
-            <Link to="/refund" className="hover:text-foreground transition-colors">Refund Policy</Link>
-          </div>
         </div>
       </div>
     </footer>

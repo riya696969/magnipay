@@ -1,27 +1,37 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUp, Mail } from "lucide-react";
 
 export const ScrollProgress = () => {
   const [progress, setProgress] = useState(0);
+  const rafRef = useRef<number>(0);
 
   useEffect(() => {
     const onScroll = () => {
-      const total = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(total > 0 ? (window.scrollY / total) * 100 : 0);
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(() => {
+        const total = document.documentElement.scrollHeight - window.innerHeight;
+        setProgress(total > 0 ? (window.scrollY / total) * 100 : 0);
+      });
     };
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(rafRef.current);
+    };
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[60] h-[2px]">
+    <div className="fixed top-0 left-0 right-0 z-[60] h-[2px] sm:h-[3px] md:h-[3.5px]">
       <div
-        className="h-full transition-[width] duration-100"
+        className="h-full rounded-r-full transition-[width] duration-150 ease-out"
         style={{
           width: `${progress}%`,
-          background: "linear-gradient(90deg, #2563EB, #7C3AED)",
-          boxShadow: "0 0 10px rgba(37, 99, 235, 0.5)",
+          background: "linear-gradient(90deg, #2563EB, #6D28D9, #7C3AED)",
+          boxShadow:
+            progress > 0
+              ? "0 0 8px rgba(37, 99, 235, 0.5), 0 0 20px rgba(124, 58, 237, 0.3)"
+              : "none",
         }}
       />
     </div>

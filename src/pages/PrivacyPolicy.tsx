@@ -182,7 +182,7 @@ const PrivacyPolicy = () => {
           style={{ background: "radial-gradient(circle, #7C3AED, transparent)" }} />
       </div>
 
-      <div className="container max-w-4xl py-16 px-4">
+      <div className="container max-w-4xl pt-28 pb-16 sm:py-16 px-4">
         {/* Back link */}
         <Link
           to="/"
