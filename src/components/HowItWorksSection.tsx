@@ -1,0 +1,106 @@
+import { motion } from "framer-motion";
+import { Mail, Code2, CreditCard, TrendingUp, ArrowRight } from "lucide-react";
+
+const steps = [
+  {
+    icon: Mail,
+    title: "Contact Us",
+    desc: "Get in touch with our team. We're here to answer questions and guide you through the process.",
+    gradient: "from-primary to-accent",
+  },
+  {
+    icon: Code2,
+    title: "Integrate API",
+    desc: "Drop in our SDK or use REST APIs. Sandbox environment included for testing.",
+    gradient: "from-accent to-secondary",
+  },
+  {
+    icon: CreditCard,
+    title: "Start Collecting",
+    desc: "Accept UPI, cards, wallets, and bank transfers from day one. Go live instantly.",
+    gradient: "from-secondary to-primary",
+  },
+  {
+    icon: TrendingUp,
+    title: "Track & Grow",
+    desc: "Real-time dashboard with analytics, reconciliation, and smart insights to scale.",
+    gradient: "from-primary to-secondary",
+  },
+];
+
+const HowItWorksSection = () => {
+  return (
+    <section className="py-28 lg:py-36 relative overflow-hidden">
+      <div className="absolute inset-0"
+        style={{ background: "radial-gradient(ellipse 50% 30% at 50% 50%, hsl(var(--glow-secondary)), transparent)" }}
+      />
+
+      <div className="container relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0)" }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center mb-20"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 capsule bg-secondary/10 border border-secondary/20 text-secondary text-xs font-semibold uppercase tracking-wider mb-6">
+            Simple Process
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-5">
+            How It <span className="text-gradient">Works</span>
+          </h2>
+          <p className="text-muted-foreground max-w-xl mx-auto text-xl">
+            Get up and running in four simple steps.
+          </p>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+          {/* Connector line */}
+          <div className="hidden lg:block absolute top-16 left-[12%] right-[12%] h-px bg-gradient-to-r from-primary/20 via-secondary/30 to-accent/20" />
+
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.title}
+              initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0)" }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="relative text-center group"
+            >
+              {/* Premium Card Background */}
+              <motion.div
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.3 }}
+                className="p-8 rounded-2xl bg-gradient-to-br from-white/60 to-white/40 dark:from-slate-700/70 dark:to-slate-800/60 backdrop-blur-xl border border-white/30 dark:border-slate-400/40 shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.3)] group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] dark:group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300"
+              >
+                <div className="relative inline-flex mb-6">
+                  <div className={`p-5 rounded-2xl bg-gradient-to-br ${step.gradient} shadow-lg
+                    group-hover:shadow-[0_0_30px_hsl(var(--primary)_/_0.4)] transition-all duration-400 group-hover:scale-110`}>
+                    <step.icon size={32} className="text-white" />
+                  </div>
+                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent border-2 border-background flex items-center justify-center text-xs font-bold text-white shadow-lg">
+                    {i + 1}
+                  </div>
+                </div>
+
+                <h3 className="font-display font-bold text-xl mb-3 text-foreground">{step.title}</h3>
+                <p className="text-base text-muted-foreground leading-relaxed">{step.desc}</p>
+
+                {/* Bottom accent line */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-primary to-accent rounded-full group-hover:w-12 transition-all duration-300" />
+              </motion.div>
+
+              {i < steps.length - 1 && (
+                <div className="hidden lg:block absolute top-1/2 -right-8 -translate-y-1/2 text-primary/30">
+                  <ArrowRight size={20} />
+                </div>
+              )}
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default HowItWorksSection;
