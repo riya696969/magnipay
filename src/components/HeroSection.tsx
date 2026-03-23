@@ -70,7 +70,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0)" }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight text-balance mb-8"
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight text-balance mb-6 sm:mb-8"
               style={{ lineHeight: '1.05' }}
             >
               Attract Payments{" "}
@@ -81,7 +81,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0)" }}
               transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="text-xl text-muted-foreground max-w-lg mb-10 text-pretty leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-lg mb-8 sm:mb-10 text-pretty leading-relaxed"
             >
               All-in-one platform for UPI, payouts, prepaid cards & business banking APIs.
               One integration to power your entire financial stack.
@@ -92,19 +92,19 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="grid grid-cols-3 gap-4 mb-10 py-6 px-6 rounded-2xl bg-gradient-to-br from-white/50 to-white/30 dark:from-black/60 dark:to-neutral-900/50 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+              className="grid grid-cols-3 gap-3 sm:gap-4 mb-8 sm:mb-10 py-4 sm:py-6 px-4 sm:px-6 rounded-2xl bg-gradient-to-br from-white/50 to-white/30 dark:from-black/60 dark:to-neutral-900/50 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
             >
               <div>
-                <div className="text-2xl font-bold text-gradient">₹2.4Cr+</div>
-                <div className="text-xs text-muted-foreground">Daily Volume</div>
+                <div className="text-lg sm:text-2xl font-bold text-gradient">₹2.4Cr+</div>
+                <div className="text-[10px] sm:text-xs text-muted-foreground">Daily Volume</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-gradient">13K+</div>
-                <div className="text-xs text-muted-foreground">Active Merchants</div>
+                <div className="text-lg sm:text-2xl font-bold text-gradient">13K+</div>
+                <div className="text-[10px] sm:text-xs text-muted-foreground">Active Merchants</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-gradient">99.99%</div>
-                <div className="text-xs text-muted-foreground">Uptime SLA</div>
+                <div className="text-lg sm:text-2xl font-bold text-gradient">99.99%</div>
+                <div className="text-[10px] sm:text-xs text-muted-foreground">Uptime SLA</div>
               </div>
             </motion.div>
 
@@ -114,11 +114,11 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-wrap gap-4"
             >
-              <a href="#contact" className="btn-cta text-base inline-flex items-center gap-2 !px-10 !py-4 group">
+              <a href="#contact" className="btn-cta text-sm sm:text-base inline-flex items-center gap-2 !px-7 sm:!px-10 !py-3 sm:!py-4 group">
                 Contact Us
                 <ArrowRight size={18} className="transition-transform duration-200 group-hover:translate-x-1" />
               </a>
-              <a href="#services" className="btn-gradient inline-flex items-center gap-2 text-base">
+              <a href="#services" className="btn-gradient inline-flex items-center gap-2 text-sm sm:text-base">
                 Explore Services
               </a>
             </motion.div>

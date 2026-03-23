@@ -15,7 +15,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-28 lg:py-36 relative overflow-hidden">
+    <section id="contact" className="py-16 sm:py-28 lg:py-36 relative overflow-hidden">
       <div className="absolute inset-0"
         style={{
           background: "radial-gradient(ellipse 60% 40% at 50% 50%, hsl(217 91% 60% / 0.06), transparent)",
@@ -37,10 +37,10 @@ const ContactSection = () => {
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-5">
             Ready to <span className="text-gradient">Get Started?</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto mb-10 text-xl">
+          <p className="text-muted-foreground max-w-xl mx-auto mb-10 text-base sm:text-xl">
             Reach out to our team and we'll get you set up within 24 hours.
           </p>
-          <a href="#contact-form" className="btn-cta text-lg px-14 py-4 inline-block">
+          <a href="#contact-form" className="btn-cta text-base sm:text-lg px-8 sm:px-14 py-3 sm:py-4 inline-block">
             Contact Us Now
           </a>
         </motion.div>
@@ -53,7 +53,7 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0, filter: "blur(0)" }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="neon-card p-10 space-y-6"
+            className="neon-card p-6 sm:p-10 space-y-5 sm:space-y-6"
           >
             {submitted && (
               <motion.div

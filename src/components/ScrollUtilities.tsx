@@ -52,7 +52,7 @@ export const BackToTop = () => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-6 right-6 z-50 lg:bottom-8 max-lg:bottom-36 p-3 rounded-full bg-gradient-to-br from-primary via-primary to-secondary 
+          className="fixed bottom-6 right-6 z-50 lg:bottom-8 max-lg:bottom-24 p-3 rounded-full bg-gradient-to-br from-primary via-primary to-secondary 
                      text-primary-foreground shadow-[0_0_20px_rgba(37,99,235,0.4)] 
                      hover:shadow-[0_0_30px_rgba(37,99,235,0.8)] hover:scale-110
                      transition-all duration-300 active:scale-95"
@@ -88,22 +88,22 @@ export const MobileCTA = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-800/90 to-transparent" />
           
           {/* Content */}
-          <div className="relative px-4 py-8 flex gap-4 items-center justify-between">
-            <div className="flex flex-col gap-1">
-              <div className="text-xs font-semibold text-amber-400 tracking-wider">READY TO GET STARTED?</div>
-              <div className="text-sm text-slate-200">Get exclusive access to MagniPay features</div>
+          <div className="relative px-4 py-5 flex gap-3 items-center justify-between">
+            <div className="flex flex-col gap-0.5 min-w-0">
+              <div className="text-[10px] sm:text-xs font-semibold text-amber-400 tracking-wider">READY TO GET STARTED?</div>
+              <div className="text-xs sm:text-sm text-slate-200 truncate">Get exclusive access to MagniPay features</div>
             </div>
             
             <motion.a 
               href="#contact"
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
-              className="flex-shrink-0 px-9 py-5 rounded-2xl font-bold text-white text-lg
+              className="flex-shrink-0 px-5 sm:px-9 py-3 sm:py-5 rounded-xl sm:rounded-2xl font-bold text-white text-sm sm:text-lg
                          bg-gradient-to-r from-[#2563EB] to-[#7C3AED] hover:from-[#3b82f6] hover:to-[#8b5cf6]
                          shadow-[0_0_25px_rgba(37,99,235,0.4)] hover:shadow-[0_0_35px_rgba(124,58,237,0.6)]
-                         transition-all duration-300 flex items-center gap-2.5"
+                         transition-all duration-300 flex items-center gap-2"
             >
-              <Mail size={22} />
+              <Mail size={18} />
               Contact Us
             </motion.a>
           </div>

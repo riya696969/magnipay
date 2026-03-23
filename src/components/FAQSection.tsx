@@ -45,7 +45,7 @@ const FAQSection = () => {
         }}
       />
 
-      <div className="container relative z-10 max-w-3xl">
+      <div className="container relative z-10 max-w-3xl px-4">
         <motion.div
           initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0)" }}

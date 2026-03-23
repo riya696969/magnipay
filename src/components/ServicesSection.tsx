@@ -197,7 +197,7 @@ const ServicesSection = () => {
               exit={{ opacity: 0, scale: 0.9, y: 30, filter: "blur(8px)" }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                         w-[90%] max-w-md p-10 rounded-2xl bg-gradient-to-br from-white/80 to-white/60 
+                         w-[92%] max-w-md p-6 sm:p-10 rounded-2xl bg-gradient-to-br from-white/80 to-white/60 
                          backdrop-blur-xl border border-white/40 shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
             >
               <button

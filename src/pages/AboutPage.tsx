@@ -35,7 +35,7 @@ const AboutPage = () => {
     <div className="noise-overlay">
       <ScrollProgress />
       <Navbar />
-      <main className="pt-28 pb-20">
+      <main className="pt-24 sm:pt-28 pb-16 sm:pb-20">
         {/* Hero */}
         <section className="container mb-20">
           <motion.div
@@ -48,10 +48,10 @@ const AboutPage = () => {
               <Building2 size={14} />
               About Us
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6">
               About <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">MagniPay</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto px-2">
               Magnipay Technologies Private Limited is a leading fintech company
               providing end-to-end payment solutions for businesses across India.
               We follow a B2B2C model, empowering retailers and partners to serve
@@ -62,7 +62,7 @@ const AboutPage = () => {
 
         {/* Stats */}
         <section className="container mb-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {stats.map((s, i) => (
               <motion.div
                 key={s.label}
@@ -73,7 +73,7 @@ const AboutPage = () => {
                 className="neon-card p-6 text-center"
               >
                 <s.icon size={28} className="text-primary mx-auto mb-3" />
-                <p className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">{s.value}</p>
+                <p className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">{s.value}</p>
                 <p className="text-sm text-muted-foreground mt-1">{s.label}</p>
               </motion.div>
             ))}
@@ -90,7 +90,7 @@ const AboutPage = () => {
           >
             Our <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Services</span>
           </motion.h2>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-3 px-2">
             {services.map((s, i) => (
               <motion.span
                 key={s}
@@ -179,16 +179,16 @@ const AboutPage = () => {
 
         {/* CTA */}
         <section className="container">
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/#contact" className="btn-cta !px-8 !py-3">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 px-4">
+            <Link to="/#contact" className="btn-cta !px-8 !py-3 text-center">
               Contact Us
             </Link>
-            <Link to="/#contact" className="px-8 py-3 rounded-xl border border-primary/30 font-semibold hover:bg-primary/5 transition-all duration-300">
+            <Link to="/#contact" className="px-8 py-3 rounded-xl border border-primary/30 font-semibold hover:bg-primary/5 transition-all duration-300 text-center">
               Become a Partner
             </Link>
             <Link
               to="/"
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-xl border border-border/50 font-semibold hover:border-primary/30 hover:bg-primary/5 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl border border-border/50 font-semibold hover:border-primary/30 hover:bg-primary/5 transition-all duration-300"
             >
               <ArrowLeft size={16} />
               Back to Home

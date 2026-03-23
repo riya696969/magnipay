@@ -49,7 +49,7 @@ const BlogPage = () => {
     <div className="noise-overlay">
       <ScrollProgress />
       <Navbar />
-      <main className="pt-28 pb-20">
+      <main className="pt-24 sm:pt-28 pb-16 sm:pb-20">
         {/* Hero */}
         <section className="container mb-16">
           <motion.div
@@ -62,7 +62,7 @@ const BlogPage = () => {
               <BookOpen size={14} />
               Blog
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6">
               Insights &{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Knowledge
@@ -77,7 +77,7 @@ const BlogPage = () => {
 
         {/* Articles Grid */}
         <section className="container mb-20">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {articles.map((a, i) => (
               <motion.a
                 key={a.title}
@@ -114,16 +114,16 @@ const BlogPage = () => {
 
         {/* CTA */}
         <section className="container">
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/#contact" className="btn-cta !px-8 !py-3">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 px-4">
+            <Link to="/#contact" className="btn-cta !px-8 !py-3 text-center">
               Contact Us
             </Link>
-            <Link to="/#contact" className="px-8 py-3 rounded-xl border border-primary/30 font-semibold hover:bg-primary/5 transition-all duration-300">
+            <Link to="/#contact" className="px-8 py-3 rounded-xl border border-primary/30 font-semibold hover:bg-primary/5 transition-all duration-300 text-center">
               Become a Partner
             </Link>
             <Link
               to="/"
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-xl border border-border/50 font-semibold hover:border-primary/30 hover:bg-primary/5 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl border border-border/50 font-semibold hover:border-primary/30 hover:bg-primary/5 transition-all duration-300"
             >
               <ArrowLeft size={16} />
               Back to Home
