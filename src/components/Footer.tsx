@@ -10,10 +10,10 @@ const footerLinks = {
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border/50 bg-card/30 pt-20 pb-10">
+    <footer className="border-t border-border/50 bg-card/30 pt-12 sm:pt-16 md:pt-20 pb-6 sm:pb-8 md:pb-10">
       <div className="container">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-12 mb-16">
-          <div className="col-span-2 md:col-span-1">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-12 mb-10 sm:mb-12 lg:mb-16">
+          <div className="col-span-2 sm:col-span-2 lg:col-span-1 mb-2 sm:mb-0">
             <MagniPayLogo size="sm" />
             <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
               Empowering digital payments with speed, security, and simplicity.

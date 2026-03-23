@@ -43,10 +43,15 @@ const features = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-28 lg:py-36 relative overflow-hidden">
+    <section id="about" className="py-20 sm:py-28 lg:py-36 relative overflow-hidden">
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full blur-3xl opacity-20"
         style={{ background: "radial-gradient(circle, hsl(263 70% 58% / 0.1), transparent)" }}
       />
+      {/* Premium gradient mesh */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full blur-[120px] opacity-15 pointer-events-none"
+        style={{ background: "radial-gradient(circle, #2563EB, transparent)" }} />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full blur-[120px] opacity-10 pointer-events-none"
+        style={{ background: "radial-gradient(circle, #7C3AED, transparent)" }} />
       
       <div className="container relative z-10">
         <motion.div
@@ -82,7 +87,7 @@ const AboutSection = () => {
           </Link>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {features.map((f, i) => (
             <motion.div
               key={f.title}
@@ -90,7 +95,7 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0)" }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="neon-card p-7 group"
+              className="neon-card p-4 sm:p-5 md:p-7 group"
             >
               <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${f.gradient} mb-4
                 group-hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] transition-all duration-300`}>

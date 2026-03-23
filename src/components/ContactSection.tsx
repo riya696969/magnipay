@@ -21,6 +21,11 @@ const ContactSection = () => {
           background: "radial-gradient(ellipse 60% 40% at 50% 50%, hsl(217 91% 60% / 0.06), transparent)",
         }}
       />
+      {/* Premium gradient accents */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full blur-[120px] opacity-10 pointer-events-none"
+        style={{ background: "linear-gradient(135deg, #2563EB, #7C3AED)" }} />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full blur-[120px] opacity-10 pointer-events-none"
+        style={{ background: "linear-gradient(135deg, #7C3AED, #2563EB)" }} />
       
       <div className="container relative z-10">
         <motion.div
@@ -28,7 +33,7 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0, filter: "blur(0)" }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-16"
+          className="text-left mb-16 max-w-xl"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 capsule bg-accent/10 border border-accent/20 text-accent text-xs font-semibold uppercase tracking-wider mb-6">
             <Sparkles size={12} />
@@ -37,15 +42,15 @@ const ContactSection = () => {
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-5">
             Ready to <span className="text-gradient">Get Started?</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto mb-10 text-base sm:text-xl">
+          <p className="text-muted-foreground mb-10 text-base sm:text-lg lg:text-xl leading-relaxed">
             Reach out to our team and we'll get you set up within 24 hours.
           </p>
-          <a href="#contact-form" className="btn-cta text-base sm:text-lg px-8 sm:px-14 py-3 sm:py-4 inline-block">
+          <a href="#contact-form" className="btn-cta text-base sm:text-lg lg:text-xl px-10 sm:px-16 py-4 sm:py-5 inline-block animate-pulse-glow">
             Contact Us Now
           </a>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-14 items-start" id="contact-form">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-14 items-start" id="contact-form">
           <motion.form
             ref={formRef}
             onSubmit={handleSubmit}
@@ -53,7 +58,7 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0, filter: "blur(0)" }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="neon-card p-6 sm:p-10 space-y-5 sm:space-y-6"
+            className="neon-card p-5 sm:p-8 lg:p-10 space-y-4 sm:space-y-5 lg:space-y-6"
           >
             {submitted && (
               <motion.div
@@ -71,12 +76,12 @@ const ContactSection = () => {
                 required
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full capsule border border-border bg-muted/30 px-5 py-3 text-sm text-foreground
+                className="w-full rounded-xl border border-border bg-muted/30 px-4 sm:px-5 py-3 sm:py-3.5 text-sm sm:text-base text-foreground
                            focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all duration-200 placeholder:text-muted-foreground/50"
                 placeholder="Your full name"
               />
             </div>
-            <div className="grid sm:grid-cols-2 gap-5">
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
               <div>
                 <label className="block text-sm font-semibold mb-2 text-muted-foreground uppercase tracking-wider">Email</label>
                 <input
@@ -84,7 +89,7 @@ const ContactSection = () => {
                   required
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="w-full capsule border border-border bg-muted/30 px-5 py-3 text-sm text-foreground
+                  className="w-full rounded-xl border border-border bg-muted/30 px-4 sm:px-5 py-3 sm:py-3.5 text-sm sm:text-base text-foreground
                              focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all duration-200 placeholder:text-muted-foreground/50"
                   placeholder="you@company.com"
                 />
@@ -95,7 +100,7 @@ const ContactSection = () => {
                   type="tel"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  className="w-full capsule border border-border bg-muted/30 px-5 py-3 text-sm text-foreground
+                  className="w-full rounded-xl border border-border bg-muted/30 px-4 sm:px-5 py-3 sm:py-3.5 text-sm sm:text-base text-foreground
                              focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all duration-200 placeholder:text-muted-foreground/50"
                   placeholder="+91 98765 43210"
                 />
@@ -108,12 +113,12 @@ const ContactSection = () => {
                 rows={4}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full rounded-2xl border border-border bg-muted/30 px-5 py-3 text-sm resize-none text-foreground
+                className="w-full rounded-xl border border-border bg-muted/30 px-4 sm:px-5 py-3 sm:py-3.5 text-sm sm:text-base resize-none text-foreground
                            focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all duration-200 placeholder:text-muted-foreground/50"
                 placeholder="Tell us about your business needs…"
               />
             </div>
-            <button type="submit" className="btn-primary-glow w-full flex items-center justify-center gap-2 text-base">
+            <button type="submit" className="btn-primary-glow w-full flex items-center justify-center gap-2 text-base sm:text-lg py-3.5 sm:py-4">
               <Send size={18} /> Send Message
             </button>
           </motion.form>
@@ -125,8 +130,8 @@ const ContactSection = () => {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="space-y-6"
           >
-            <div className="neon-card p-8">
-              <h3 className="font-display font-bold text-xl mb-6">Get in Touch</h3>
+            <div className="neon-card p-5 sm:p-8">
+              <h3 className="font-display font-bold text-lg sm:text-xl mb-4 sm:mb-6">Get in Touch</h3>
               <div className="space-y-5">
                 <a href="tel:+916727359737" className="flex items-center gap-4 group">
                   <div className="p-3 rounded-xl bg-gradient-to-br from-primary to-accent group-hover:shadow-[0_0_20px_hsl(217_91%_60%_/_0.3)] transition-all duration-300">
@@ -149,8 +154,8 @@ const ContactSection = () => {
               </div>
             </div>
 
-            <div className="neon-card p-8">
-              <h3 className="font-display font-bold text-lg mb-3">Office</h3>
+            <div className="neon-card p-5 sm:p-8">
+              <h3 className="font-display font-bold text-base sm:text-lg mb-3">Office</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Magnipay Technologies Private Limited<br />
                 No. 1456, 4343, Kasoti, Pandiri,<br />

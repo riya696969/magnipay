@@ -142,7 +142,7 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 bottom-0 z-50 w-72 bg-white dark:bg-black border-l border-border p-6"
+              className="fixed top-0 right-0 bottom-0 z-50 w-[85vw] max-w-xs bg-white dark:bg-black border-l border-border p-6"
             >
               <button onClick={() => setMobileOpen(false)} className="absolute top-4 right-4 p-2" aria-label="Close">
                 <X size={20} />
@@ -196,7 +196,7 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed top-0 right-0 bottom-0 z-50 w-80 bg-white dark:bg-black border-l border-border/50 flex flex-col"
+              className="fixed top-0 right-0 bottom-0 z-50 w-[85vw] max-w-sm bg-white dark:bg-black border-l border-border/50 flex flex-col"
             >
               {/* Header */}
               <div className="flex items-center justify-between p-6 border-b border-border/50">

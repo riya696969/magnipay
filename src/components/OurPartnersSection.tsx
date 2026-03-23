@@ -22,13 +22,13 @@ const PartnerCard = ({ name, logo, index = 0 }: { name: string; logo: string; in
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: index * 0.05, ease: "easeOut" }}
     whileHover={{ scale: 1.08, y: -4 }}
-    className="flex-shrink-0 flex items-center justify-center px-5 py-4 rounded-2xl border border-border/30 bg-card/50 backdrop-blur-md hover:border-primary/40 hover:shadow-[0_4px_30px_rgba(37,99,235,0.15)] transition-all duration-500 ease-out select-none cursor-pointer"
+    className="flex-shrink-0 flex items-center justify-center px-3 sm:px-5 py-3 sm:py-4 rounded-xl sm:rounded-2xl border border-border/30 bg-card/50 backdrop-blur-md hover:border-primary/40 hover:shadow-[0_4px_30px_rgba(37,99,235,0.15)] transition-all duration-500 ease-out select-none cursor-pointer"
     title={name}
   >
     <img
       src={logo}
       alt={name}
-      className="h-14 w-auto max-w-[140px] object-contain transition-all duration-300"
+      className="h-10 sm:h-14 w-auto max-w-[100px] sm:max-w-[140px] object-contain transition-all duration-300"
       loading="lazy"
     />
   </motion.div>
@@ -64,14 +64,14 @@ const OurPartnersSection = () => {
       </div>
 
       {/* Marquee rows */}
-      <div className="space-y-8">
+      <div className="space-y-6 sm:space-y-8">
         {/* Row 1 — scrolls left */}
         <div className="relative group">
-          <div className="absolute left-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 md:w-48 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 md:w-48 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
           <div className="flex animate-marquee-left-slow group-hover:[animation-play-state:paused]">
             {[...partners, ...partners].map((p, i) => (
-              <div key={i} className="mx-3">
+              <div key={i} className="mx-1.5 sm:mx-3">
                 <PartnerCard {...p} index={i % partners.length} />
               </div>
             ))}
@@ -80,11 +80,11 @@ const OurPartnersSection = () => {
 
         {/* Row 2 — scrolls right */}
         <div className="relative group">
-          <div className="absolute left-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 md:w-48 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 md:w-48 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
           <div className="flex animate-marquee-right-slow group-hover:[animation-play-state:paused]">
             {[...partners.slice().reverse(), ...partners.slice().reverse()].map((p, i) => (
-              <div key={i} className="mx-3">
+              <div key={i} className="mx-1.5 sm:mx-3">
                 <PartnerCard {...p} index={i % partners.length} />
               </div>
             ))}

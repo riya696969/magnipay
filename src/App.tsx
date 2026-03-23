@@ -17,6 +17,13 @@ const queryClient = new QueryClient();
 
 const ScrollToHash = () => {
   const { hash, pathname } = useLocation();
+
+  // Always scroll to top on initial page load / reload
+  useEffect(() => {
+    window.history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     if (hash) {
       const id = hash.replace("#", "");

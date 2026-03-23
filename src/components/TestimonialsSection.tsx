@@ -32,10 +32,15 @@ const TestimonialsSection = () => {
   }, [next]);
 
   return (
-    <section className="py-28 lg:py-36 relative overflow-hidden">
+    <section className="py-20 sm:py-28 lg:py-36 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full blur-3xl"
         style={{ background: "radial-gradient(circle, hsl(217 91% 60% / 0.06), transparent)" }}
       />
+      {/* Premium gradient orbs */}
+      <div className="absolute top-10 right-0 w-[350px] h-[350px] rounded-full blur-[100px] opacity-10 pointer-events-none"
+        style={{ background: "linear-gradient(135deg, #7C3AED, #2563EB)" }} />
+      <div className="absolute bottom-10 left-0 w-[300px] h-[300px] rounded-full blur-[100px] opacity-10 pointer-events-none"
+        style={{ background: "linear-gradient(135deg, #2563EB, #7C3AED)" }} />
       
       <div className="container max-w-3xl relative z-10">
         <motion.div
@@ -58,9 +63,9 @@ const TestimonialsSection = () => {
           whileInView={{ opacity: 1, y: 0, filter: "blur(0)" }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="relative neon-card p-12 lg:p-16 min-h-[260px]"
+          className="relative neon-card p-5 sm:p-8 md:p-12 lg:p-16 min-h-[200px] sm:min-h-[240px] md:min-h-[260px]"
         >
-          <Quote size={36} className="text-primary/15 absolute top-8 left-8" />
+          <Quote size={28} className="text-primary/15 absolute top-5 left-5 sm:top-8 sm:left-8" />
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -70,7 +75,7 @@ const TestimonialsSection = () => {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="text-center"
             >
-              <p className="text-xl leading-relaxed text-muted-foreground mb-8 italic text-pretty">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-muted-foreground mb-5 sm:mb-6 md:mb-8 italic text-pretty">
                 "{testimonials[current].text}"
               </p>
               <div className="font-display font-bold text-lg">{testimonials[current].name}</div>
@@ -78,7 +83,7 @@ const TestimonialsSection = () => {
             </motion.div>
           </AnimatePresence>
 
-          <div className="flex items-center justify-center gap-5 mt-10">
+          <div className="flex items-center justify-center gap-4 sm:gap-5 mt-6 sm:mt-10">
             <button onClick={prev} className="p-3 rounded-full border border-border/50 hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 active:scale-95" aria-label="Previous">
               <ChevronLeft size={18} />
             </button>

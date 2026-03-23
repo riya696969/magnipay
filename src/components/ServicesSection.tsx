@@ -11,6 +11,7 @@ import {
 
 const categories = [
   {
+    id: "cat-collections",
     title: "Collections",
     icon: Layers,
     gradient: "from-primary to-accent",
@@ -21,6 +22,7 @@ const categories = [
     ],
   },
   {
+    id: "cat-aadhaar",
     title: "Aadhaar Enabled Payments",
     icon: Fingerprint,
     gradient: "from-primary to-secondary",
@@ -31,6 +33,7 @@ const categories = [
     ],
   },
   {
+    id: "cat-banking",
     title: "Banking",
     icon: Landmark,
     gradient: "from-accent to-secondary",
@@ -41,6 +44,7 @@ const categories = [
     ],
   },
   {
+    id: "cat-payment-services",
     title: "Payment Services",
     icon: CreditCard,
     gradient: "from-secondary to-primary",
@@ -51,6 +55,7 @@ const categories = [
     ],
   },
   {
+    id: "cat-cash-management",
     title: "Cash Management",
     icon: Building2,
     gradient: "from-primary to-accent",
@@ -61,6 +66,7 @@ const categories = [
     ],
   },
   {
+    id: "cat-remittance",
     title: "Money Remittance",
     icon: Send,
     gradient: "from-accent to-secondary",
@@ -71,6 +77,7 @@ const categories = [
     ],
   },
   {
+    id: "cat-insurance",
     title: "Insurance",
     icon: Shield,
     gradient: "from-accent to-secondary",
@@ -81,6 +88,7 @@ const categories = [
     ],
   },
   {
+    id: "cat-travel",
     title: "Travel",
     icon: Plane,
     gradient: "from-primary to-secondary",
@@ -91,6 +99,7 @@ const categories = [
     ],
   },
   {
+    id: "cat-bills",
     title: "Bill Payments & Recharges",
     icon: Receipt,
     gradient: "from-secondary to-accent",
@@ -107,7 +116,7 @@ const ServicesSection = () => {
   const [activeModal, setActiveModal] = useState<{ title: string; desc: string } | null>(null);
 
   return (
-    <section id="services" className="py-28 lg:py-36 relative overflow-hidden">
+    <section id="services" className="py-20 sm:py-28 lg:py-36 relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full blur-3xl opacity-30"
         style={{ background: "radial-gradient(circle, hsl(217 91% 60% / 0.1), transparent)" }}
@@ -127,27 +136,28 @@ const ServicesSection = () => {
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-5">
             Comprehensive Payment <span className="text-gradient">Solutions</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-pretty text-xl">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-pretty text-base sm:text-lg lg:text-xl">
             From collections to payouts, we provide the complete financial infrastructure your business needs to grow.
           </p>
         </motion.div>
 
-        <div className="space-y-28">
+        <div className="space-y-16 sm:space-y-20 lg:space-y-28">
           {categories.map((cat, catIdx) => (
-            <div key={cat.title}>
+            <div key={cat.title} id={cat.id}>
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="flex items-center gap-4 mb-8"
+                className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8"
               >
-                <div className={`p-3 rounded-xl bg-gradient-to-br ${cat.gradient} shadow-lg`}>
-                  <cat.icon size={22} className="text-white" />
+                <div className={`p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br ${cat.gradient} shadow-lg`}>
+                  <cat.icon size={18} className="text-white sm:hidden" />
+                  <cat.icon size={22} className="text-white hidden sm:block" />
                 </div>
-                <h3 className="font-display text-2xl font-bold">{cat.title}</h3>
+                <h3 className="font-display text-xl sm:text-2xl font-bold">{cat.title}</h3>
               </motion.div>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
                 {cat.services.map((s, i) => (
                   <motion.button
                     key={s.title}
@@ -157,18 +167,19 @@ const ServicesSection = () => {
                     transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                     onClick={() => setActiveModal(s)}
                     whileHover={{ y: -6, scale: 1.02 }}
-                    className="relative p-7 rounded-2xl bg-gradient-to-br from-white/60 to-white/40 dark:from-black/70 dark:to-neutral-900/60 backdrop-blur-xl 
+                    className="relative p-4 sm:p-6 md:p-7 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/60 to-white/40 dark:from-black/70 dark:to-neutral-900/60 backdrop-blur-xl 
                                border border-white/30 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)]
                                group cursor-pointer active:scale-[0.97] transition-all duration-300
-                               hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_20px_40px_rgba(37,99,235,0.15)] text-left overflow-hidden"
+                               hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_20px_40px_rgba(37,99,235,0.15)] text-left overflow-hidden
+                               flex flex-col h-full"
                   >
-                    <div className={`inline-flex p-4 rounded-xl mb-5 transition-all duration-300
+                    <div className={`inline-flex p-3.5 rounded-xl mb-4 transition-all duration-300
                       bg-gradient-to-br ${cat.gradient} shadow-lg
                       group-hover:shadow-[0_0_25px_rgba(37,99,235,0.5)] group-hover:scale-110`}>
-                      <s.icon size={24} className="text-white" />
+                      <s.icon size={22} className="text-white" />
                     </div>
-                    <h4 className="font-semibold text-lg mb-2 text-foreground group-hover:text-primary transition-colors duration-300">{s.title}</h4>
-                    <p className="text-base text-muted-foreground leading-relaxed line-clamp-2 group-hover:line-clamp-3 transition-all">{s.desc}</p>
+                    <h4 className="font-display font-semibold text-base sm:text-lg mb-2 text-foreground group-hover:text-primary transition-colors duration-300">{s.title}</h4>
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed line-clamp-3 flex-grow">{s.desc}</p>
                     
                     {/* Hover indicator line */}
                     <div className="absolute bottom-0 left-0 w-0 h-1 rounded-t-full group-hover:w-full transition-all duration-300" style={{ background: "linear-gradient(90deg, #2563EB, #7C3AED)" }} />
@@ -197,8 +208,9 @@ const ServicesSection = () => {
               exit={{ opacity: 0, scale: 0.9, y: 30, filter: "blur(8px)" }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="fixed z-50 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                         w-[92%] max-w-md p-6 sm:p-10 rounded-2xl bg-gradient-to-br from-white/80 to-white/60 
-                         backdrop-blur-xl border border-white/40 shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
+                         w-[92%] max-w-md p-6 sm:p-10 rounded-2xl bg-gradient-to-br from-white/90 to-white/70 
+                         dark:from-neutral-900/95 dark:to-neutral-800/90
+                         backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
             >
               <button
                 onClick={() => setActiveModal(null)}

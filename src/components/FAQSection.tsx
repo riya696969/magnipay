@@ -36,7 +36,7 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="py-28 lg:py-36 relative overflow-hidden">
+    <section id="faq" className="py-20 sm:py-28 lg:py-36 relative overflow-hidden">
       <div
         className="absolute inset-0"
         style={{
@@ -61,7 +61,7 @@ const FAQSection = () => {
             Frequently Asked{" "}
             <span className="text-gradient">Questions</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto text-xl">
+          <p className="text-muted-foreground max-w-xl mx-auto text-base sm:text-lg lg:text-xl">
             Everything you need to know about MagniPay.
           </p>
         </motion.div>
@@ -77,12 +77,12 @@ const FAQSection = () => {
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="neon-card px-7 py-1 border-none data-[state=open]:border-primary/20"
+                className="neon-card px-4 sm:px-7 py-1 border-none data-[state=open]:border-primary/20"
               >
-                <AccordionTrigger className="text-left font-semibold text-base hover:no-underline hover:text-primary transition-colors py-5">
+                <AccordionTrigger className="text-left font-semibold text-sm sm:text-base hover:no-underline hover:text-primary transition-colors py-4 sm:py-5">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed text-base pb-5">
+                <AccordionContent className="text-muted-foreground leading-relaxed text-sm sm:text-base pb-4 sm:pb-5">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>

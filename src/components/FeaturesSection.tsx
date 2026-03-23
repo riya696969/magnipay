@@ -58,7 +58,14 @@ const AnimatedCounter = ({ value, suffix, decimals = 0 }: { value: number | stri
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="py-28 lg:py-36 relative overflow-hidden">
+    <section id="features" className="py-20 sm:py-28 lg:py-36 relative overflow-hidden">
+      {/* Premium gradient mesh */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full blur-[120px] opacity-20"
+          style={{ background: "radial-gradient(circle, #2563EB, transparent)" }} />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full blur-[120px] opacity-15"
+          style={{ background: "radial-gradient(circle, #7C3AED, transparent)" }} />
+      </div>
       <div className="absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage: `linear-gradient(hsl(var(--secondary) / 0.4) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--secondary) / 0.4) 1px, transparent 1px)`,
@@ -83,7 +90,7 @@ const FeaturesSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-28">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-20 sm:mb-28">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -91,13 +98,14 @@ const FeaturesSection = () => {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0)" }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-              className="neon-card p-8 text-center group"
+              className="neon-card p-4 sm:p-5 md:p-8 text-center group"
             >
-              <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${stat.gradient} mb-5 
+              <div className={`inline-flex p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-gradient-to-br ${stat.gradient} mb-3 sm:mb-5 
                 group-hover:shadow-[0_0_30px_hsl(var(--primary)_/_0.3)] transition-all duration-400`}>
-                <stat.icon size={26} className="text-white" />
+                <stat.icon size={20} className="text-white sm:hidden" />
+                <stat.icon size={26} className="text-white hidden sm:block" />
               </div>
-              <div className="font-display text-4xl font-bold mb-2 tabular-nums text-gradient">
+              <div className="font-display text-xl sm:text-2xl md:text-4xl font-bold mb-1 sm:mb-2 tabular-nums text-gradient">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
               </div>
               <div className="text-sm text-muted-foreground font-medium uppercase tracking-wider">{stat.label}</div>
@@ -106,7 +114,7 @@ const FeaturesSection = () => {
         </div>
 
         {/* Features - Split layout */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -24, filter: "blur(6px)" }}
             whileInView={{ opacity: 1, x: 0, filter: "blur(0)" }}
@@ -126,7 +134,7 @@ const FeaturesSection = () => {
             </a>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {features.map((f, i) => (
               <motion.div
                 key={f.title}
@@ -134,7 +142,7 @@ const FeaturesSection = () => {
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0)" }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="neon-card p-6 group"
+                className="neon-card p-5 sm:p-6 group"
               >
                 <div className="p-3 rounded-xl bg-primary/10 w-fit mb-4 group-hover:bg-primary/20 group-hover:shadow-[0_0_15px_hsl(var(--primary)_/_0.2)] transition-all duration-300">
                   <f.icon size={20} className="text-primary" />

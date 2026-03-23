@@ -1,8 +1,10 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import ServicesMarquee from "@/components/ServicesMarquee";
 import OurPartnersSection from "@/components/OurPartnersSection";
 import ServicesSection from "@/components/ServicesSection";
 import FeaturesSection from "@/components/FeaturesSection";
+import ImageShowcase from "@/components/ImageShowcase";
 import RefundPolicySection from "@/components/RefundPolicySection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import AboutSection from "@/components/AboutSection";
@@ -15,14 +17,16 @@ import { ScrollProgress, BackToTop, MobileCTA } from "@/components/ScrollUtiliti
 
 const Index = () => {
   return (
-    <div className="noise-overlay">
+    <div className="noise-overlay overflow-x-hidden">
       <ScrollProgress />
       <Navbar />
       <main>
         <HeroSection />
+        <ServicesMarquee />
         <OurPartnersSection />
         <ServicesSection />
         <FeaturesSection />
+        <ImageShowcase />
         <RefundPolicySection />
         <HowItWorksSection />
         <AboutSection />
