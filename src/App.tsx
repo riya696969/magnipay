@@ -21,7 +21,15 @@ const ScrollToHash = () => {
   // Always scroll to top on initial page load / reload
   useEffect(() => {
     window.history.scrollRestoration = "manual";
+    // Force scroll to top immediately + after paint to beat layout shifts
     window.scrollTo(0, 0);
+    requestAnimationFrame(() => window.scrollTo(0, 0));
+    const raf2 = requestAnimationFrame(() => {
+      requestAnimationFrame(() => window.scrollTo(0, 0));
+    });
+    // Final fallback after animations settle
+    const t = setTimeout(() => window.scrollTo(0, 0), 150);
+    return () => { cancelAnimationFrame(raf2); clearTimeout(t); };
   }, []);
 
   useEffect(() => {
@@ -37,7 +45,8 @@ const ScrollToHash = () => {
       };
       setTimeout(() => tryScroll(), 50);
     } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      // Instant scroll (no smooth) to avoid racing with animations
+      window.scrollTo(0, 0);
     }
   }, [hash, pathname]);
   return null;
